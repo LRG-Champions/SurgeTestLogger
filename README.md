@@ -1,12 +1,21 @@
-# SurgeTestLogger
+
 Prerequisites:
 - Microsoft 365 subscription including PowerApps e.g. E3 Licence.  
 - Access to a SharePoint Online site where you can create a new List
 - Access to your LLPG to export properties to be targeted for Surge Testing
 
+Please note there are now 2 versions of the PowerApp, as below, so you now have 
+an option of recording each test given to a property enabling a fully 
+reconciliation (SurgeTestLogger_BarcodeScannerVersion.zip) and an alternate 
+version which allows the user to issue N number of tests to a property without 
+capturing each test barcode (SurgeTestLogger_WithoutBarcodeScanning.zip), this 
+method means you will be able to log each test received but not which property 
+it came from. Some of the reporting notes and SharePoint details are only 
+relevant to the Barcode Scanner Version. 
+
 Implementation:
-1. Create a SharePoint Online List called “Surge Testing”
-2. The list should have the below columns:
+	1. Create a SharePoint Online List called “Surge Testing”
+	2. The list should have the below columns:
 
 		COLUMN				DATA TYPE
 		UPRN*				Single line of text	
@@ -20,14 +29,14 @@ Implementation:
 
 	*Note this column was the default ‘Title’ column which has been renamed to UPRN.
 
-3. Create a excel file containing export a list of properties you want to target for your Surge Testing in an Excel file.
+	3. Create a excel file containing export a list of properties you want to target for your Surge Testing in an Excel file.
 	   You can find a template for this \LLPG Extract\LLPGExtract_SampleFile.xlsx
 	   You should note if you are importing more than 15,000 properties you will need to split the data into tables of 15,000,
 	   the sample file has 3 preloaded tables. 
-4. Import the PowerApp zip file into your Microsoft 365 PowerApps environment (\PowerApp\ SurgeTestLogger.zip)
-5. Open the PowerApp in Edit Mode and open the _Admin screen. Follow instructions outlined on screen to import the Static 
+	4. Import the PowerApp zip file into your Microsoft 365 PowerApps environment (\PowerApp\ SurgeTestLogger*.zip).
+	5. Open the PowerApp in Edit Mode and open the _Admin screen. Follow instructions outlined on screen to import the Static 
 	   dataset and connect to your SharePoint list you create in Step 1. 
-6. Publish App and grant users access. 
+	6. Publish App and grant users access. 
 
 Reporting:
 	You should be able to use a BI tool such as QlikSense or Power BI to interrogate the data saved from the app to give 
@@ -35,3 +44,6 @@ Reporting:
 	tests etc. You will want to make use of the Created column which will be the created date time for each entry in the list. 
 	If you do not have a BI tool, you could create Views on the SP List to displace counts and properties based on filters but 
 	remember some of these features may not work when your list goes over 5000 rows of data so a BI Tool is recommended here. 
+
+
+
