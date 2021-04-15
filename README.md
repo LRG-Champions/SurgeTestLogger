@@ -14,6 +14,7 @@ it came from. Some of the reporting notes and SharePoint details are only
 relevant to the Barcode Scanner Version. 
 
 Implementation:
+
 	1. Create a SharePoint Online List called “Surge Testing”
 	2. The list should have the below columns:
 
