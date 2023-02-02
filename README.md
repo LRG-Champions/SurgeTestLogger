@@ -13,7 +13,7 @@ method means you will be able to log each test received but not which property
 it came from. Some of the reporting notes and SharePoint details are only 
 relevant to the Barcode Scanner Version. 
 
-Implementation:
+## Implementation:
 
 	1. Create a SharePoint Online List called “Surge Testing”
 	2. The list should have the below columns:
@@ -39,7 +39,7 @@ Implementation:
 	   dataset and connect to your SharePoint list you create in Step 1. 
 	6. Publish App and grant users access. 
 
-Reporting:
+## Reporting:
 	You should be able to use a BI tool such as QlikSense or Power BI to interrogate the data saved from the app to give 
 	intelligence on properties which have not had their tests collected or volume of properties which have refused / accepted 
 	tests etc. You will want to make use of the Created column which will be the created date time for each entry in the list. 
